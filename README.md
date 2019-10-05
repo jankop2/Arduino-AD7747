@@ -1,4 +1,4 @@
-# Arduino serial terminal and tester for  AD7745, AD7746 AD7747
+# Arduino serial terminal and tester for  AD7745, AD7746 AD7747 with precise i2c communication
 Serial Terminal Commands:
   - the baud rate is 115200
   - number of digits for a command with parameter must be preserved, excess zeros must not be deleted
