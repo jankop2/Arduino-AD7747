@@ -23,12 +23,11 @@ Serial Terminal Commands:
 11.   **XX** restart Arduino with SW reset AD774X including setting its default values
 
   
-  Example: 
-  _**rw10A2<CR+LF>**_                   write to configuration register number 10 value 0xA2
-  _**RW10a2<CR+LF>**_ is identical
-  _**pw0300<CR+LF>**_                   changes the sampling period to 300ms (only until RESET or POR)
-  Example makro:
-  _**SS<CR+LF>**_                       use it separately for stop sampling
-  _**RW10A2<CR+LF>NN<CR+LF>TT<CR+LF>**_ and then this as macro - write to configuration
-                                  register number 10 value 0xA2(start single conversion),
-                                  set delay 250ms and display recieved data
+Example: 
+ - _**rw10A2<CR+LF>**_                   write to configuration register number 10 value 0xA2
+ - _**RW10a2<CR+LF>**_ is identical
+ - _**pw0300<CR+LF>**_                   changes the sampling period to 300ms (only until RESET or POR)
+ 
+Example makro:
+ - _**SS<CR+LF>**_                       use it separately for stop sampling
+ - _**RW10A2<CR+LF>NN<CR+LF>TT<CR+LF>**_ and then this as macro - write to configuration register number 10 value 0xA2(start single conversion), set delay 250ms and display recieved data
