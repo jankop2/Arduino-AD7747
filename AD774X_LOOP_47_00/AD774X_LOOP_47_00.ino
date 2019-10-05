@@ -2,7 +2,7 @@
 #include <EEPROM.h>
 // AD774X I2C address
 const uint8_t  AD774X_ADDRESS = 0x48;
-// AD7746 Register address Definition
+// AD774X Register address Definition
 //--------------------------------------------------
 const uint8_t ADR_STATUS     =  0;  // Read Only
 const uint8_t ADR_CAP_DATAH  =  1;  // Read Only
@@ -23,7 +23,7 @@ const uint8_t ADR_CAP_GAINH  = 15;  // factory calibration
 const uint8_t ADR_CAP_GAINL  = 16;  // factory calibration
 const uint8_t ADR_VOLT_GAINH = 17;  // factory calibration
 const uint8_t ADR_VOLT_GAINL = 18;  // factory calibration
-// AD7746 Register Data Definition
+// AD7747 Register Data Definition
 //*** Single Ended Input 0-16pF, configuration as the Figure 28. from datasheet ***
 const uint8_t DATA_CAP_SETUP = B10100000;  // 7  0xA0 CAPEN+0+CAPDIF+00000 according to the datasheet AD7747
 const uint8_t DATA_VT_SETUP  = B10000001;  // 8  0x81 VTEN+000000+VTCHOP for internal temperature
