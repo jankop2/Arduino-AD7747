@@ -16,7 +16,7 @@ Tested with Arduino IDE 1.8.10 and Arduino AVR Boards Built-In Arduino version 1
 3.  **OO** not implemented now
 4.   **PR**  prints the sampling period of the converter, in the decimal form dddd, the unit is time in [ms]
 5.   **PWdddd** write setting the AD774X sampling period, dddd are four digits 0000-9999, the unit is time in [ms]
-6.   **RR** prints all registers in the form "R00 = hh R01 = hh… R18 = hh R19 = hh"
+6.   **RR** prints all registers in the form "R00 = hh R01 = hh… R18 = hh"
 7.   **RRdd** prints one register in the form "Rdd = hh"
 8.   **RWddhh** writes to the register dd hexadecimal value hh, dd are two decimal digits in the range 00 - 18
 9.   **SS** disables / enables periodic sampling of AD774X, default is OFF !!!
