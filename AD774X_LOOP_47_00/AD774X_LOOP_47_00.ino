@@ -35,7 +35,7 @@ const uint8_t DATA_CAP_OFFH  = B10000000;  // 13 0x80 OFFSET 0x8000 - the middle
 const uint8_t DATA_CAP_OFFL  = B00000000;  // 14 0x00     "                 "
 //--------------------------------------------------------
 const uint8_t  SINGLE_SAMPLE = B00000010;  // 0x02 is "OR" mask for start single sample
-volatile uint8_t RTxBuff[20];              // I/O buffer for AD774X registers
+uint8_t RTxBuff[20];                       // I/O buffer for AD774X registers
 const uint8_t OneByte = 1;
 const uint8_t SxBuffLength = 8;            // length of input buffer for parsing commands
 uint8_t  SxBuff[SxBuffLength + 1];         // input buffer for serial parser
