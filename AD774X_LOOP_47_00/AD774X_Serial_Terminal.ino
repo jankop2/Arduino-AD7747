@@ -19,7 +19,7 @@
   oo     OFFSET           not implemented now
   pr     PERIODE READ     prints the sampling period of the converter, in the decimal form dddd, the unit is time in [ms]
   pwdddd PERIODE WRITE    write setting the AD774X sampling period, dddd are four digits 0000-9999, the unit is time in [ms]
-  rr     REGISTERS READ   prints all registers in the form "R00 = hh R01 = hh… R18 = hh R19 = hh"
+  rr     REGISTERS READ   prints all registers in the form "R00 = hh R01 = hh… R18 = hh"
   rrdd   REGISTER READ    prints one register in the form "Rdd = hh"
   rwddhh REGISTER WRITE   writes to the register dd hexadecimal value hh, dd are two decimal digits in the range 00 - 18
   ss     SAMPLE STOP      disables / enables periodic sampling of AD774X, default is OFF !!!
