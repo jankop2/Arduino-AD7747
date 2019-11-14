@@ -62,7 +62,7 @@ void SerialTerminal(void) {
       //----------------------------------------------------------------------
       if ((SxBuff[SxBuffLength - 4] == 'f' || SxBuff[SxBuffLength - 4] == 'F') && (SxBuff[SxBuffLength - 3] == 'w' || SxBuff[SxBuffLength - 3] == 'W')) {
         WriteRegistersToFlash();
-        Serial.print(F("\r\nRegisters 07-14 are written to flash memory as default"));
+        Serial.print(F("\r\nRegisters 07-14 are written to EEPROM memory as default"));
       }
       //----------------------------------------------------------------------
       // delete flash memory and sets PROGMEM as default
