@@ -29,7 +29,7 @@ const uint8_t DATA_CAP_SETUP = B10100000;  // 7  0xA0 CAPEN+0+CAPDIF+00000 accor
 const uint8_t DATA_VT_SETUP  = B10000001;  // 8  0x81 VTEN+000000+VTCHOP for internal temperature
 const uint8_t DATA_EXC_SETUP = B00001110;  // 9  0x0E 0000+EXDAC+EXCEN+0 according to the datasheet AD7747
 const uint8_t DATA_CFG       = B10100000;  // 10 0xA0 VTFS1+0+CAPFS2+00000 = Idle mode, conversion time VT-62.1ms; CAP-124ms
-const uint8_t DATA_CAPDACA   = B10011111;  // 11 0xA0 CAPDACA ON + 8pF , mid range of capacity = 0x20 (is cca -9pF, cca -0.274 pF by step)
+const uint8_t DATA_CAPDACA   = B10011111;  // 11 0x9F CAPDACA ON + 8pF , mid range of capacity = 0x20 (is cca -9pF, cca -0.274 pF by step)
 const uint8_t DATA_CAPDACB   = B10000000;  // 12 0x80 CAPDACB ON + 0pF according to the datasheet AD7747 for Single-Ended
 const uint8_t DATA_CAP_OFFH  = B10000000;  // 13 0x80 OFFSET 0x8000 - the middle of the interval (the full range is +- 1 pF)
 const uint8_t DATA_CAP_OFFL  = B00000000;  // 14 0x00     "                 "
