@@ -1,3 +1,0 @@
-For Differential Input Configuration AD7747, AD7745/46 ready
-Added command FR - clears the EEPROM memory area in use, registers 07-14 are initialized from PROGMEM only.
-For AD7745 and AD7746 you must use your registry settings ! For AD7745/46 also edit one marked row in the AD774X_Sampling section.
