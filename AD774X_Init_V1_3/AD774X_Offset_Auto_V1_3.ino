@@ -83,8 +83,8 @@ void OffsetAutomatic(void) {
       if (StepByStep >= 4 * HowManySteps) {
         // calculation CAP_OFFSET correction settings
         float FineOffset = (32768.0 * C1 / (C1 - C2));
-        // if FineOffset > 32767, an error - offset could not be compensated
-        if (FineOffset > 32767) {
+        // an error - offset could not be compensated
+        if (abs(FineOffset) > 32767) {
           Serial.print(F("\r\nPhase 4. terminated"));
           Serial.print(F("\r\nError - Offset could not be compensated !"));
           C1 = 0;
