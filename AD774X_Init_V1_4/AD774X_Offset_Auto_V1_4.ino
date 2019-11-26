@@ -130,7 +130,6 @@ void OffsetStop(void) {
   EnableOffsetAutomatic = false;
   EnablePeriodicSampling = true;
   EnableSerialTerminal = true;
-  TimeTemp = millis();
   // starts first sample after offset setting
-  AD774X_Write_Single_Register(ADR_CFG, (AD774X_Read_Single_Register(ADR_CFG) & MODES) | SINGLE);
+  StartNewConversion();
 }
