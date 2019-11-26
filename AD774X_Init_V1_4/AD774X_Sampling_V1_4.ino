@@ -19,7 +19,7 @@ void StartNewConversion(void) {
 //conversion of the obtained data to real values
 //----------------------------------------------------------------------
 
-float ConvertCapRawData(void) {
+long ConvertCapRawData(void) {
   return long((long)RTxBuff[ADR_CAP_DATAH] << 16) + ((long)RTxBuff[ADR_CAP_DATAM] << 8) + (long)RTxBuff[ADR_CAP_DATAL] - 0x800000;
 }
 float ConvertCapData(void) {
