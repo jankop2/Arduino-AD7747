@@ -1,4 +1,4 @@
-#define VERSION "\r\nVersion of installed firmware is V1.4 - 11/2019 by jankop"
+#define VERSION "\r\nVersion of installed firmware is V1.5 - 11/2019 by jankop"
 #include <Wire.h>
 #include <EEPROM.h>
 const uint8_t AD774X_ADDRESS = 0x48;// AD774X I2C address
