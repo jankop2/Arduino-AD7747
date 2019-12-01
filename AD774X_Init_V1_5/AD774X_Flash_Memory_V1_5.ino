@@ -24,7 +24,7 @@ void WriteRegistersToFlash(void) {
   }
   EEPROM.put (EEPROMAddrSamplePeriod, SamplePeriod);
   // 0xAA is flag for default setting AD774X from EEPROM
-  EEPROM.update(0, 0xAA);
+  EEPROM.update(EEPROMStart, 0xAA);
 }
 void DeleteEEPROM(void) {
   for (uint8_t i = EEPROMStart; i < 19; i++)EEPROM.update(i, 0xFF);
