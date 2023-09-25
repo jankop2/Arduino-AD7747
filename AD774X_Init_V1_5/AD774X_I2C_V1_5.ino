@@ -49,6 +49,7 @@ uint8_t AD774X_Write_Single_Register(uint8_t RegAdres, uint8_t DataSingl) {
   Wire.write(RegAdres);
   Wire.write(DataSingl);
   I2C_State = Wire.endTransmission();
+  return I2C_State;
 }
 //---------------------------------------------------------------------
 // Writes to the registry a defined number of bytes that are stored in the RxBuff field
