@@ -8,7 +8,7 @@ const uint8_t AD774X_ADDRESS = 0x48;// AD774X I2C address
 // This setting is compatible with automatic offset using the OO command.
 // Registers definitions are for AD7747 only! You must use yours own
 // registers settings for AD7745 or AD7746 here!
-const bool    AD7747         = true;       // Set your IC type, true = AD7747, false = AD7745/46
+const bool    AD7747         = false;       // Set your IC type, true = AD7747, false = AD7745/46
 const uint8_t DATA_CAP_SETUP = B10100000;  // 7  0xA0 CAPEN+0+CAPDIF+00000 according to the datasheet AD7747
 const uint8_t DATA_VT_SETUP  = B10000001;  // 8  0x81 VTEN+000000+VTCHOP for internal temperature
 const uint8_t DATA_EXC_SETUP = B00001110;  // 9  0x0E 0000+EXDAC+EXCEN+EXCLVL1+0 according to the datasheet AD7747
