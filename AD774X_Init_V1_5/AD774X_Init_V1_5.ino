@@ -9,13 +9,13 @@ const uint8_t AD774X_ADDRESS = 0x48;// AD774X I2C address
 // Registers definitions are for AD7747 only! You must use yours own
 // registers settings for AD7745 or AD7746 here!
 const bool    AD7747         = false;       // Set your IC type, true = AD7747, false = AD7745/46
-const uint8_t DATA_CAP_SETUP = B10100000;  // 7  0xA0 CAPEN+0+CAPDIF+00000 according to the datasheet AD7747
-const uint8_t DATA_VT_SETUP  = B10000001;  // 8  0x81 VTEN+000000+VTCHOP for internal temperature
-const uint8_t DATA_EXC_SETUP = B00001110;  // 9  0x0E 0000+EXDAC+EXCEN+EXCLVL1+0 according to the datasheet AD7747
-const uint8_t DATA_CFG       = B10100000;  // 10 0xA0 VTFS1+0+CAPFS2+00000 = Idle mode, conversion time VT-62.1ms; CAP-124ms
-const uint8_t DATA_CAPDACA   = B00000000;  // 11 0x00 CAPDACA OFF
-const uint8_t DATA_CAPDACB   = B00000000;  // 12 0x00 CAPDACB OFF
-const uint8_t DATA_CAP_OFFH  = B10000000;  // 13 0x80 OFFSET 0x8000 - the middle of the interval (the full range is is approximately +- 1 pF)
+const uint8_t DATA_CAP_SETUP = B11000000;  // 7  CAPEN+CIN2+CAPDIF+0000+CAPCHOP according, default cin2 single mode
+const uint8_t DATA_VT_SETUP  = B00000001;  // 8  VTEN+VTMD1+VTMD0+EXTREF+00+VTSHORT+VTCHOP for internal temperature, default disable
+const uint8_t DATA_EXC_SETUP = B00001011;  // 9  CLKCTRL+EXCON+EXCB+EXCB^+EXCA+EXCA^+EXCLVL1+EXCLVL0, default EXCA 1/2Vdd
+const uint8_t DATA_CFG       = B11000000;  // 10 VTF1+VTF0+CAPF2+CAPF1+CAPF0+MD2+MD1+MD0 , VT conversion time 8.2Hz, Cap conversion time 90.9Hz,Idel time
+const uint8_t DATA_CAPDACA   = B00000000;  // 11 CAPDACA OFF
+const uint8_t DATA_CAPDACB   = B00000000;  // 12 CAPDACB OFF
+const uint8_t DATA_CAP_OFFH  = B10000000;  // 13 OFFSET 0x8000 - the middle of the interval (the full range is is approximately +- 1 pF)
 const uint8_t DATA_CAP_OFFL  = B00000000;  // 14 0x00     "                 "
 //******************** Settings end  ********************************
 // AD774X Register address Definition
@@ -60,9 +60,9 @@ uint8_t I2C_State = 0;                     // status of I2C bus, 0 = without err
 unsigned int SamplePeriod = 1000;          // sample period in [ms]
 float C1 = 0, C2 = 0;                      // auxiliary variables for zero correction calculation
 float Capacitance = 0.0, Temperature = 0.0;// real data
-bool EnablePeriodicSampling = false;       // periodic sampling with output to serial port, is default disabled
+bool EnablePeriodicSampling = true;       // periodic sampling with output to serial port, is default disabled
 bool EnableSerialTerminal = true;          // enable input from serial port
-bool EnableOffsetAutomatic = false;        // enable automatic offset, better said automatic zero setting, is stopped as default
+bool EnableOffsetAutomatic = true;        // enable automatic offset, better said automatic zero setting, is stopped as default
 // the indexes in the DefaultRegisters field correspond to the addresses of each AD774X registry
 const uint8_t DefaultRegisters[] PROGMEM = {0, 0, 0, 0, 0, 0, 0, DATA_CAP_SETUP, DATA_VT_SETUP, DATA_EXC_SETUP, DATA_CFG,
                                             DATA_CAPDACA, DATA_CAPDACB, DATA_CAP_OFFH, DATA_CAP_OFFL, 0, 0, 0, 0
