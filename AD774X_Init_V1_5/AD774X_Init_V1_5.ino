@@ -57,12 +57,12 @@ const uint8_t SxBuffLength = 8;            // length of input buffer for parsing
 uint8_t SxBuff[SxBuffLength + 1];          // input buffer for serial parser
 uint8_t RTxBuff[20];                       // I/O buffer for AD774X registers
 uint8_t I2C_State = 0;                     // status of I2C bus, 0 = without error
-unsigned int SamplePeriod = 1000;          // sample period in [ms]
+unsigned int SamplePeriod = 100;          // sample period in [ms]
 float C1 = 0, C2 = 0;                      // auxiliary variables for zero correction calculation
 float Capacitance = 0.0, Temperature = 0.0;// real data
 bool EnablePeriodicSampling = true;       // periodic sampling with output to serial port, is default disabled
 bool EnableSerialTerminal = true;          // enable input from serial port
-bool EnableOffsetAutomatic = true;        // enable automatic offset, better said automatic zero setting, is stopped as default
+bool EnableOffsetAutomatic = false;        // enable automatic offset, better said automatic zero setting, is stopped as default
 // the indexes in the DefaultRegisters field correspond to the addresses of each AD774X registry
 const uint8_t DefaultRegisters[] PROGMEM = {0, 0, 0, 0, 0, 0, 0, DATA_CAP_SETUP, DATA_VT_SETUP, DATA_EXC_SETUP, DATA_CFG,
                                             DATA_CAPDACA, DATA_CAPDACB, DATA_CAP_OFFH, DATA_CAP_OFFL, 0, 0, 0, 0

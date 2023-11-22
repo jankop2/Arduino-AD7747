@@ -7,9 +7,10 @@ void StartNewConversion(void) {
   AD774X_Write_Single_Register(ADR_CFG, (AD774X_Read_Single_Register(ADR_CFG) & MODES) | SINGLE);
 }
 void PeriodicSampling(void) {
+  AD774X_Write_Single_Register(ADR_CAPDACA,B10110111);//code work for length demo, need adjust for real data
   if ((millis() - SamplePeriod) > TimeTemp) {
     // reading valid data
-    AD774X_Read_Registers(ADR_CAP_DATAH, RTxBuff, 6);
+    AD774X_Read_Registers(ADR_CAP_DATAH, RTxBuff, 3);
     StartNewConversion();
     // convert and list of acquired data
     SerialPrintData();
@@ -33,11 +34,9 @@ float ConvertTempData(void) {
 }
 void SerialPrintData(void) {
   Capacitance = ConvertCapData();
-  Temperature = ConvertTempData();
   Serial.println("");
   if (Capacitance >= 0)Serial.print(F(" "));
   Serial.print(Capacitance, 6);
-  Serial.print(F("  pF    "));
-  Serial.print(Temperature, 2);
-  Serial.print(F("  deg.C"));
+  //Serial.print(F("  pF    "));
+ // Serial.print(long((long)RTxBuff[ADR_CAP_DATAH] << 16) + ((long)RTxBuff[ADR_CAP_DATAM] << 8) + (long)RTxBuff[ADR_CAP_DATAL]);
 }
